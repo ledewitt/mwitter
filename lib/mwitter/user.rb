@@ -8,5 +8,10 @@ module Mwitter
     has_many :mweets
     
     attr_accessible :handle
+    
+    def as_json(options={})
+      { created_at: created_at,
+        handle:     handle }
+    end
   end
 end
