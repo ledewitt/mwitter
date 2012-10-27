@@ -1,0 +1,16 @@
+<h1>
+  <%= user.handle %>'s mweets:  
+</h1>
+
+<form action="/<%= user.handle %>/mweeter" method="post">
+  <div><label for="mweet">Mweet:</label><br>
+  <input type="text"
+         name="mweet"
+         id="mweet"
+         size="142" /></div>
+  <div><input type="submit" value="Mweet" /></div>
+</form>
+
+<% mweets.each do |mweet| %>
+  <div> <%= mweet.body %> &mdash; <%= mweet.created_at.strftime("%d %b, %Y %I:%M%p")%></div>  
+<% end %>
