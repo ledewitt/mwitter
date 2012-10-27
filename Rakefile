@@ -1,3 +1,3 @@
-#require          'bundler/setup'
+require          'bundler/setup'
 require          'sinatra/activerecord/rake'
 require_relative 'config/database'
