@@ -1,5 +1,2 @@
-require 'bundler/setup'
-require 'sinatra'
-require 'sinatra/activerecord'
-
-set :database, 'sqlite3:///db/mwitter.db'
+require          'bundler/setup'
+require_relative 'config/database'
