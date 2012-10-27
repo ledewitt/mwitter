@@ -2,7 +2,7 @@ require          'bundler/setup'
 require          'sinatra/activerecord/rake'
 require_relative 'config/database'
 
-desc "Task description"
+desc "Launch a console with our environment loaded"
 task :console do
   require          'irb'
   require_relative 'lib/mwitter'
