@@ -8,15 +8,14 @@ require_relative 'lib/mwitter'
 
 get("/:handle") {
   user = Mwitter::User.find_by_handle!(params[:handle])
-  p request.accept
   mweets = user.mweets.limit(10).order("created_at DESC")
   if request.accept.include? "application/json"
     content_type :json
-    mweets.to_json(except:  [:id, :updated_at, :user_id], 
-                   include: :user)
+    mweets.to_json(except:  [:id, :updated_at, :user_id],
+                   include: {user: {except: [:id, :updated_at]}})
   else
-  erb :mweets, locals: {   user:   user,
-                         mweets: mweets }
+    erb :mweets, locals: {   user:   user,
+                           mweets: mweets }
   end
 }
 
