@@ -1,8 +1,8 @@
 require          'bundler/setup'
 require          'sinatra'
-require          'json'
 require_relative 'config/database'
 require_relative 'lib/mwitter'
+require          'json'
 
 # for handle show ten most recent mweets
 
